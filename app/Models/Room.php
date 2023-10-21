@@ -13,6 +13,13 @@ class Room extends Model
     use HasUuids;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'description'];
+
+    /**
      * Get the cabinets in a room.
      */
     public function cabinets(): HasMany
