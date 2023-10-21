@@ -26,7 +26,7 @@ class RoomController extends Controller
     }
 
     /**
-     * @urlParam room_id string required The UUID of the room. Example: 9a6c7eaa-c73e-46cf-b625-a52eec78c62d
+     * @urlParam room_id string required The UUID of the room. Example: 9a6c8f8c-df24-4958-86e1-2fe4bb3a7f28
      * @group Rooms
      */
     public function get_room(string $room_id): Room

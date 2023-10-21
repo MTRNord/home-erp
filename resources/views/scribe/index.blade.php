@@ -169,7 +169,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
+x-ratelimit-remaining: 56
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -283,7 +283,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/rooms/9a6c7eaa-c73e-46cf-b625-a52eec78c62d" \
+    --get "http://localhost/api/rooms/9a6c8f8c-df24-4958-86e1-2fe4bb3a7f28" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -291,7 +291,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/rooms/9a6c7eaa-c73e-46cf-b625-a52eec78c62d"
+    "http://localhost/api/rooms/9a6c8f8c-df24-4958-86e1-2fe4bb3a7f28"
 );
 
 const headers = {
@@ -318,14 +318,14 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 55
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;id&quot;: &quot;9a6c7eaa-c73e-46cf-b625-a52eec78c62d&quot;,
-    &quot;created_at&quot;: &quot;2023-10-21T17:02:02.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2023-10-21T17:02:02.000000Z&quot;,
+    &quot;id&quot;: &quot;9a6c8f8c-df24-4958-86e1-2fe4bb3a7f28&quot;,
+    &quot;created_at&quot;: &quot;2023-10-21T17:49:15.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2023-10-21T17:49:15.000000Z&quot;,
     &quot;name&quot;: &quot;Test&quot;,
     &quot;description&quot;: &quot;test&quot;,
     &quot;cabinet_id&quot;: null
@@ -419,10 +419,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="room_id"                data-endpoint="GETapi-rooms--room_id-"
-               value="9a6c7eaa-c73e-46cf-b625-a52eec78c62d"
+               value="9a6c8f8c-df24-4958-86e1-2fe4bb3a7f28"
                data-component="url">
     <br>
-<p>The UUID of the room. Example: <code>9a6c7eaa-c73e-46cf-b625-a52eec78c62d</code></p>
+<p>The UUID of the room. Example: <code>9a6c8f8c-df24-4958-86e1-2fe4bb3a7f28</code></p>
             </div>
                     </form>
 
@@ -475,25 +475,25 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
+x-ratelimit-remaining: 54
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;id&quot;: &quot;9a6c7eaa-c73e-46cf-b625-a52eec78c62d&quot;,
-        &quot;created_at&quot;: &quot;2023-10-21T17:02:02.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-10-21T17:02:02.000000Z&quot;,
+        &quot;id&quot;: &quot;9a6c8f8c-df24-4958-86e1-2fe4bb3a7f28&quot;,
+        &quot;created_at&quot;: &quot;2023-10-21T17:49:15.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-10-21T17:49:15.000000Z&quot;,
         &quot;name&quot;: &quot;Test&quot;,
         &quot;description&quot;: &quot;test&quot;,
         &quot;cabinet_id&quot;: null
     },
     {
-        &quot;id&quot;: &quot;9a6c7f77-6a5b-4f2d-83dd-f7f10b9ce375&quot;,
-        &quot;created_at&quot;: &quot;2023-10-21T17:04:16.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2023-10-21T17:04:16.000000Z&quot;,
-        &quot;name&quot;: &quot;Test1&quot;,
-        &quot;description&quot;: &quot;Test&quot;,
+        &quot;id&quot;: &quot;9a6c90b0-b901-4b06-bc63-bc6a576eebd3&quot;,
+        &quot;created_at&quot;: &quot;2023-10-21T17:52:26.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2023-10-21T17:52:26.000000Z&quot;,
+        &quot;name&quot;: &quot;Test2&quot;,
+        &quot;description&quot;: &quot;test&quot;,
         &quot;cabinet_id&quot;: null
     }
 ]</code>

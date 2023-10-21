@@ -14,7 +14,7 @@ return new class extends Migration {
         Schema::create('rooms', function (Blueprint $table) {
             $table->uuid('id');
             $table->timestamps();
-            $table->string("name");
+            $table->string("name")->unique();
             $table->string("description");
             $table->foreignIdFor(Cabinet::class)->nullable($value = true);
         });

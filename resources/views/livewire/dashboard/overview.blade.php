@@ -18,11 +18,11 @@ new class extends Component {
     public function createRoom(): void
     {
         $this->validate();
-        $newRoom = Room::create([
+        Room::create([
             'name' => $this->roomname,
             'description' => $this->description,
         ]);
-        session()->flash('uuid', $newRoom->id);
+        $this->dispatch('close');
     }
 
     public function with(): array
@@ -54,57 +54,39 @@ new class extends Component {
 
     <x-modal name="create-room" :show="$errors->isNotEmpty()" focusable>
         <form wire:submit="createRoom" class="p-6">
-            @if (session('uuid'))
-                <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                    {{ __('Room successfully created') }}
-                </h2>
-                <div class="mt-6">
-                    <!-- TODO: Allow writing to the nfc tag directly -->
-                    <p class="mr-3 text-sm text-gray-800 dark:text-gray-200">
-                        {{ __('tokens.uuid', ['uuid' => session('uuid')]) }}
-                    </p>
-                </div>
-                <div class="mt-6 flex justify-end items-center">
+            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                {{ __('Create Room') }}
+            </h2>
+            <div class="mt-6">
+                <x-input-label for="roomname" value="{{ __('Roomname') }}" class="sr-only" />
 
-                    <x-secondary-button x-on:click="$dispatch('close')">
-                        {{ __('Close') }}
-                    </x-secondary-button>
-                </div>
-            @else
-                <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                <x-text-input wire:model="roomname" id="roomname" name="roomname" type="text"
+                    class="mt-1 block w-full" placeholder="{{ __('Roomname') }}" />
+
+                <x-input-error :messages="$errors->get('roomname')" class="mt-2" />
+            </div>
+
+            <div class="mt-3">
+                <x-input-label for="description" value="{{ __('Description') }}" class="sr-only" />
+
+                <x-text-input wire:model="description" id="description" name="description" type="text"
+                    class="mt-1 block w-full" placeholder="{{ __('Description') }}" />
+
+                <x-input-error :messages="$errors->get('description')" class="mt-2" />
+            </div>
+            <div class="mt-6 flex justify-end">
+                <x-secondary-button x-on:click="$dispatch('close')">
+                    {{ __('Cancel') }}
+                </x-secondary-button>
+
+                <x-primary-button class="ml-3">
                     {{ __('Create Room') }}
-                </h2>
-                <div class="mt-6">
-                    <x-input-label for="roomname" value="{{ __('Roomname') }}" class="sr-only" />
-
-                    <x-text-input wire:model="roomname" id="roomname" name="roomname" type="text"
-                        class="mt-1 block w-full" placeholder="{{ __('Roomname') }}" />
-
-                    <x-input-error :messages="$errors->get('roomname')" class="mt-2" />
-                </div>
-
-                <div class="mt-3">
-                    <x-input-label for="description" value="{{ __('Description') }}" class="sr-only" />
-
-                    <x-text-input wire:model="description" id="description" name="description" type="text"
-                        class="mt-1 block w-full" placeholder="{{ __('Description') }}" />
-
-                    <x-input-error :messages="$errors->get('description')" class="mt-2" />
-                </div>
-                <div class="mt-6 flex justify-end">
-                    <x-secondary-button x-on:click="$dispatch('close')">
-                        {{ __('Cancel') }}
-                    </x-secondary-button>
-
-                    <x-primary-button class="ml-3">
-                        {{ __('Create Room') }}
-                    </x-primary-button>
-                </div>
-            @endif
+                </x-primary-button>
+            </div>
         </form>
     </x-modal>
 
-    @if ($rooms->items() > 0)
+    @if ($rooms->count() > 0)
         <table class="table-fixed w-full border-separate border-spacing-0 rounded-lg text-sm">
             <thead class="bg-gray-700 font-medium text-slate-300 dark:text-slate-200 text-left">
                 <tr>
@@ -113,9 +95,6 @@ new class extends Component {
                     </th>
                     <th class="border-b dark:border-slate-600 p-4 pl-8 pt-3 pb-3">
                         {{ __('Description') }}
-                    </th>
-                    <th class="border-b dark:border-slate-600 p-4 pl-8 pt-3 pb-3">
-                        {{ __('UUID') }}
                     </th>
                 </tr>
             </thead>
@@ -128,9 +107,6 @@ new class extends Component {
                         <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8">
                             {{ $room->description }}
                         </td>
-                        <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8">
-                            {{ $room->id }}
-                        </td>
                     </tr>
                 @endforeach
             </tbody>
@@ -142,3 +118,13 @@ new class extends Component {
         </p>
     @endif
 </section>
+
+<script>
+    document.addEventListener('livewire:initialized', () => {
+        Livewire.on('flash-nfc', ({
+            room_id
+        }) => {
+
+        })
+    })
+</script>
