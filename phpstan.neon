@@ -5,6 +5,14 @@ parameters:
 
     paths:
         - app/
+        - resources/
+        - routes/
+        - tests/
+        - public/
+        - lang/
+        - database/
+        - config/
+        - bootstrap/
 
     # Level 9 is the highest level
     level: 5
