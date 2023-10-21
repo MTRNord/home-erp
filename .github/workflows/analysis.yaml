@@ -15,8 +15,10 @@ jobs:
           php-version: '8.2'
           coverage: none
 
-      - name: Install composer dependencies
-        run: composer install -n --prefer-dist
+      - name: Install dependencies
+        run: |
+        composer install -n --prefer-dist
+        npm install && npm run build
 
       - name: Run Static Analysis
         run: ./vendor/bin/phpstan --error-format=github
