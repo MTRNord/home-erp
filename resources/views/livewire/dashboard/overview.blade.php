@@ -18,11 +18,17 @@ new class extends Component {
     public function createRoom(): void
     {
         $this->validate();
-        Room::create([
-            'name' => $this->roomname,
-            'description' => $this->description,
-        ]);
-        $this->dispatch('close');
+        try {
+            Room::firstOrCreate([
+                'name' => $this->roomname,
+                'description' => $this->description,
+            ]);
+            $this->roomname = '';
+            $this->description = '';
+            $this->dispatch('close');
+        } catch (\Exception $e) {
+            $this->addError('create-error', 'Failed to create Room. Please notify the admin');
+        }
     }
 
     public function with(): array
@@ -82,6 +88,7 @@ new class extends Component {
                 <x-primary-button class="ml-3">
                     {{ __('Create Room') }}
                 </x-primary-button>
+                <x-input-error :messages="$errors->get('create-error')" class="mt-2" />
             </div>
         </form>
     </x-modal>
