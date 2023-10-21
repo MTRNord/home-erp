@@ -27,14 +27,18 @@ class RoomController extends Controller
 
     /**
      * @urlParam room_id string required The UUID of the room. Example: 9a6c7eaa-c73e-46cf-b625-a52eec78c62d
+     * @group Rooms
      */
-    public function get_room_json(string $room_id): Room
+    public function get_room(string $room_id): Room
     {
         $room = Room::find($room_id);
         return $room;
     }
 
-    public function get_rooms_json(): Collection
+    /**
+     * @group Rooms
+     */
+    public function get_rooms(): Collection
     {
         $rooms = Room::all();
         return $rooms;

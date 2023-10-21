@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('auth:sanctum')->get('/rooms/{room_id}', [RoomController::class, 'get_room_json']);
-Route::middleware('auth:sanctum')->get('/rooms/', [RoomController::class, 'get_rooms_json']);
+Route::middleware('auth:sanctum')->get('/rooms/{room_id}', [RoomController::class, 'get_room']);
+Route::middleware('auth:sanctum')->get('/rooms/', [RoomController::class, 'get_rooms']);

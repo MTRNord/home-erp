@@ -74,11 +74,18 @@
                                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-rooms--room_id-">
-                                <a href="#endpoints-GETapi-rooms--room_id-">GET api/rooms/{room_id}</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-rooms" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="rooms">
+                    <a href="#rooms">Rooms</a>
+                </li>
+                                    <ul id="tocify-subheader-rooms" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="rooms-GETapi-rooms--room_id-">
+                                <a href="#rooms-GETapi-rooms--room_id-">GET api/rooms/{room_id}</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-rooms">
-                                <a href="#endpoints-GETapi-rooms">GET api/rooms</a>
+                                                                                <li class="tocify-item level-2" data-unique="rooms-GETapi-rooms">
+                                <a href="#rooms-GETapi-rooms">GET api/rooms</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -162,7 +169,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -258,7 +265,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-rooms--room_id-">GET api/rooms/{room_id}</h2>
+                <h1 id="rooms">Rooms</h1>
+
+    
+
+                                <h2 id="rooms-GETapi-rooms--room_id-">GET api/rooms/{room_id}</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -307,7 +318,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 58
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -415,7 +426,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-GETapi-rooms">GET api/rooms</h2>
+                    <h2 id="rooms-GETapi-rooms">GET api/rooms</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -464,7 +475,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 57
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
