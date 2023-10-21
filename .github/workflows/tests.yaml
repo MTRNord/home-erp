@@ -18,8 +18,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-        composer install -n --prefer-dist
-        npm install
+          composer install -n --prefer-dist
+          npm install
 
       - name: Prepare Laravel Application
         run: |

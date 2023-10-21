@@ -17,8 +17,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-        composer install -n --prefer-dist
-        npm install && npm run build
+          composer install -n --prefer-dist
+          npm install && npm run build
 
       - name: Run Static Analysis
         run: ./vendor/bin/phpstan --error-format=github
