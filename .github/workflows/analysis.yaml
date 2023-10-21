@@ -21,4 +21,4 @@ jobs:
           npm install && npm run build
 
       - name: Run Static Analysis
-        run: ./vendor/bin/phpstan --error-format=github
+        run: ./vendor/bin/phpstan --error-format=github .
